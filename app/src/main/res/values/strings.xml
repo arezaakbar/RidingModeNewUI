@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Riding Mode</string>
+    <string name="current_bluetooth_status">Current Bluetooth Status</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="selected_mode">Selected Mode:</string>
+    <string name="current_mode">Current Mode</string>
+</resources>

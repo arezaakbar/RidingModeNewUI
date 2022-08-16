@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    tools:context=".MainActivity">
+
+<!--color palette: https://colorhunt.co/palette/f5eddccfd2cfa2b5bbeb1d36-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/ic_wave"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textBluetoothStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="9dp"
+            android:layout_marginStart="28dp"
+            android:text="@string/current_bluetooth_status"
+            android:textColor="@color/grey"
+            android:textSize="24sp"
+            android:fontFamily="@font/freesans"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/connect"
+                android:background="@drawable/custombutton"
+                android:fontFamily="@font/freesans"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/color1" />
+
+            <Button
+                android:id="@+id/disconnectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="28dp"
+                android:layout_weight="1"
+                android:text="@string/disconnect"
+                android:background="@drawable/custombutton"
+                android:fontFamily="@font/freesans"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/color1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/bubble_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="0sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp">
+
+                <TextView
+                    android:id="@+id/textViewMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/selected_mode" />
+
+                <TextView
+                    android:id="@+id/displayCurrentMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/freesans"
+                    android:text="@string/current_mode"
+                    android:textColor="@color/grey"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10sp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/ecoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/color_for"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ecoView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eco"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/freesans"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color1"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sportyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_rowWeight="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/color_prim"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sporty"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/freesans"
+                            android:textAllCaps="false"
+                            android:textSize="24sp"
+                            android:textColor="@color/color1"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/defaultButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_rowWeight="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/color_thr"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Default"
+                            android:textSize="24sp"
+                            android:textAlignment="center"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/freesans"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color1"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/ecoButton"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_columnWeight="2"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textColor="@color/color1"-->
+<!--                    android:text="Eco" >-->
+<!--                 </Button>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/sportyButton"-->
+<!--                    android:layout_columnWeight="2"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textColor="@color/color1"-->
+<!--                    android:text="Sporty" >-->
+<!--                </Button>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/defaultButton"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_columnWeight="2"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_margin="5sp"-->
+<!--                    android:textColor="@color/color1"-->
+<!--                    android:text="default" >-->
+<!--                </Button>-->
+
+            </GridLayout>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/displayCurrentMode"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="displayCurrentMode"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20sp" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/ecoButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="160dp"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/eco_mode" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ecoTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:text="Eco Mode" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/sportyButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="160dp"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/sporty_mode" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/sportyTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:text="Sporty Mode" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/defaultButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="160dp"-->
+<!--            android:background="@drawable/round_button"-->
+<!--            android:scaleType="centerInside"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/defaultTextView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:text="Default Mode" />-->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
